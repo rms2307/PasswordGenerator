@@ -1,10 +1,19 @@
 <!DOCTYPE html>
+
+<script>
+    function copyToClipboard(elementId) {
+        var copyText = document.getElementById(elementId);
+        copyText.select();
+        document.execCommand("copy");
+    }
+</script>
+
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PasswordGenerator</title>
+    <title>Gerador de Senha</title>
     <!--<base href="/" />-->
     <base href="https://rms2307.github.io/PasswordGenerator/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />

@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using Microsoft.JSInterop;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace PasswordGenerator.Pages
@@ -76,9 +77,7 @@ namespace PasswordGenerator.Pages
                     rng.GetBytes(box);
                     int k = box[0] % n;
                     n--;
-                    char value = array[k];
-                    array[k] = array[n];
-                    array[n] = value;
+                    (array[n], array[k]) = (array[k], array[n]);
                 }
             }
             return new string(array);
@@ -94,6 +93,11 @@ namespace PasswordGenerator.Pages
 
             int index = randomByte[0] % chars.Length;
             return chars[index];
+        }
+
+        private async Task CopyPassword()
+        {
+            await JS.InvokeVoidAsync("copyToClipboard", "passwordOutput");
         }
     }
 }
