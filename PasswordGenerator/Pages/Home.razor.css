@@ -1,0 +1,12 @@
+﻿.container {
+    max-width: 400px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-check-label {
+    margin-left: 0.5rem;
+}

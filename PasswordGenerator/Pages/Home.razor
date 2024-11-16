@@ -1,0 +1,53 @@
+﻿@page "/"
+
+<PageTitle>Gerador de Senha</PageTitle>
+
+<div class="container mt-5">
+    <h2 class="text-center">Gerador de Senha</h2>
+
+    <div class="card p-3">
+        <div class="form-group mb-3">
+            <label for="passwordOutput">Senha Gerada</label>
+            <div class="input-group">
+                <input type="text" id="passwordOutput" class="form-control" @bind="GeneratedPassword" readonly />
+
+                <button type="button" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="passwordLength">Comprimento da Senha: @PasswordLength</label>
+            <input type="range" id="passwordLength" class="form-range" min="8" max="24" @bind="PasswordLength" />
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" id="includeLowercase" class="form-check-input" @bind="IncludeLowercase" />
+            <label class="form-check-label" for="includeLowercase">Letras minúsculas</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" id="includeUppercase" class="form-check-input" @bind="IncludeUppercase" />
+            <label class="form-check-label" for="includeUppercase">Letras maiúsculas</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" id="includeNumbers" class="form-check-input" @bind="IncludeNumbers" />
+            <label class="form-check-label" for="includeNumbers">Números</label>
+        </div>
+
+        <div class="form-check mb-3">
+            <input type="checkbox" id="includeSymbols" class="form-check-input" @bind="IncludeSymbols" />
+            <label class="form-check-label" for="includeSymbols">Símbolos</label>
+        </div>
+
+        <button class="btn btn-primary w-100" @onclick="GeneratePassword" disabled=@IsGenerateButtonDisabled>Gerar</button>
+    </div>
+</div>
+
