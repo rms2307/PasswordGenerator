@@ -1,6 +1,6 @@
 {
-  "name": "PasswordGenerator",
-  "short_name": "PasswordGenerator",
+  "name": "Gerador de Senha",
+  "short_name": "Gerador de Senha",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
