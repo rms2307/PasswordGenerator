@@ -1,5 +1,8 @@
 ﻿@page "/"
+@using PasswordGenerator.Services.Interfaces
+
 @inject IJSRuntime JS
+@inject IGeneratePasswordService PasswordGeneratorService
 
 <PageTitle>Gerador de Senha</PageTitle>
 
